@@ -46,14 +46,12 @@ npm run dev
 
 ## Deploy
 
-Se despliega como **GitHub Pages Project Page** en:
+Se despliega como **GitHub Pages User Page** en:
 
 ```
-https://franciscocuminilondero.github.io/portfolio/
+https://franciscocuminilondero.github.io/
 ```
 
 El deploy es automático vía GitHub Actions (`.github/workflows/deploy.yml`):
 cada push a `main` instala dependencias, corre `lint` y `build`, y publica
-`dist/` en GitHub Pages. `vite.config.ts` tiene `base: '/portfolio/'`
-configurado para que assets, CSS, JS e imágenes resuelvan correctamente bajo
-esa ruta.
+`dist/` en GitHub Pages.
