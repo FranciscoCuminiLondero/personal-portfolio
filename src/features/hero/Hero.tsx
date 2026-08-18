@@ -61,7 +61,7 @@ export function Hero() {
             sin que se note el halo translúcido de esas esquinas. */}
         <div className="rounded-2xl bg-surface p-4 ring-1 ring-border">
           <img
-            src="/me.png"
+            src={`${import.meta.env.BASE_URL}me.png`}
             alt={siteConfig.name}
             width={256}
             height={256}
