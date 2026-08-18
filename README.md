@@ -1,75 +1,59 @@
-# React + TypeScript + Vite
+# Francisco Cumini Londero — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio profesional de **Francisco Cumini Londero**, Frontend Developer.
 
-Currently, two official plugins are available:
+Sitio de una sola página con Navbar, Hero, About, What I Do, Projects, Skills,
+Experience y Contact — navegación por anclas, sin rutas ni backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19 + TypeScript (`strict`)
+- Vite
+- Tailwind CSS
+- lucide-react (íconos)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sin librerías de estado, UI, animación, backend ni CMS.
 
-## Expanding the ESLint configuration
+## Arquitectura
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Feature-based pragmática: cada sección del portfolio vive en `src/features/`
+como su propio componente (con `data/` local si tiene contenido estructurado
+propio, como `features/projects/`). Lo genuinamente compartido entre features
+vive en:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `src/components/` — componentes reutilizables reales (`CtaButton`,
+  `Footer`, íconos de marca).
+- `src/lib/` — datos e integraciones comunes (`siteConfig`).
+- `src/types/` — tipos compartidos entre features (`SiteConfig`).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Detalle completo de decisiones de arquitectura en [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Ejecutar localmente
 
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Comandos disponibles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Comando           | Qué hace                                |
+| ------------------ | ---------------------------------------- |
+| `npm run dev`     | Servidor de desarrollo con hot reload    |
+| `npm run build`   | Type-check (`tsc -b`) + build de producción en `dist/` |
+| `npm run lint`    | ESLint sobre todo el proyecto            |
+| `npm run preview` | Sirve `dist/` localmente para verificar el build |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Deploy
+
+Se despliega como **GitHub Pages Project Page** en:
 
 ```
+https://franciscocuminilondero.github.io/portfolio/
+```
+
+El deploy es automático vía GitHub Actions (`.github/workflows/deploy.yml`):
+cada push a `main` instala dependencias, corre `lint` y `build`, y publica
+`dist/` en GitHub Pages. `vite.config.ts` tiene `base: '/portfolio/'`
+configurado para que assets, CSS, JS e imágenes resuelvan correctamente bajo
+esa ruta.
