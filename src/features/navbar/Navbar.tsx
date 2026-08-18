@@ -7,14 +7,15 @@ type NavLink = {
   href: string
 }
 
-// Anclas a secciones que todavía no existen (About, Projects, etc. llegan en
-// próximas etapas). No rompen nada: hasta que esas secciones se implementen
-// con su `id` correspondiente, simplemente no hacen scroll a ningún lado.
+// Proyectos y Contacto todavía no tienen sección (llegan en próxima etapa).
+// No rompen nada: hasta que existan con su `id` correspondiente, esos links
+// simplemente no hacen scroll a ningún lado.
 const navLinks: NavLink[] = [
   { label: 'Sobre mí', href: '#sobre-mi' },
+  { label: 'Qué hago', href: '#que-hago' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Experiencia', href: '#experiencia' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Experiencia', href: '#experiencia' },
   { label: 'Contacto', href: '#contacto' },
 ]
 

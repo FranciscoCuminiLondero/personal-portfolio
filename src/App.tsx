@@ -1,6 +1,7 @@
 import { Navbar } from './features/navbar/Navbar'
 import { Hero } from './features/hero/Hero'
 import { About } from './features/about/About'
+import { WhatIDo } from './features/what-i-do/WhatIDo'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <WhatIDo />
     </div>
   )
 }
