@@ -1,8 +1,6 @@
 import type { SVGProps } from 'react'
+import { CtaButton } from '../../components/CtaButton'
 import { siteConfig } from '../../lib/site'
-
-const ctaBaseClasses =
-  'inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium transition-colors'
 
 // lucide-react no incluye íconos de marca (licencia). Como son solo dos y
 // específicos del Hero, se resuelven con SVG inline en vez de sumar otra
@@ -41,18 +39,10 @@ export function Hero() {
         <p className="text-lg text-muted">{siteConfig.description}</p>
 
         <div className="mt-2 flex flex-wrap items-center justify-center gap-4 md:justify-start">
-          <a
-            href="#proyectos"
-            className={`${ctaBaseClasses} bg-accent text-accent-foreground hover:bg-accent/90`}
-          >
-            Ver proyectos
-          </a>
-          <a
-            href="#contacto"
-            className={`${ctaBaseClasses} border border-border text-foreground hover:border-accent hover:text-accent`}
-          >
+          <CtaButton href="#proyectos">Ver proyectos</CtaButton>
+          <CtaButton href="#contacto" variant="secondary">
             Contacto
-          </a>
+          </CtaButton>
         </div>
 
         {hasSocialLinks && (
