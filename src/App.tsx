@@ -12,13 +12,15 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
-      <About />
-      <WhatIDo />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <WhatIDo />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )
