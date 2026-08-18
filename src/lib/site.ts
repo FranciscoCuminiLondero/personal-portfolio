@@ -5,7 +5,9 @@ export const siteConfig: SiteConfig = {
   role: 'Frontend Developer',
   description:
     'Futuro Técnico Universitario en Programación, en camino hacia el desarrollo Full Stack.',
+  email: 'cuminifrancisco@gmail.com',
   social: {
-    // TODO: agregar cuando estén definidas (github, linkedin).
+    github: 'https://github.com/FranciscoCuminiLondero',
+    linkedin: 'https://www.linkedin.com/in/francisco-cumini',
   },
 }

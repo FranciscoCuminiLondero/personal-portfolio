@@ -5,6 +5,8 @@ import { WhatIDo } from './features/what-i-do/WhatIDo'
 import { Projects } from './features/projects/Projects'
 import { Skills } from './features/skills/Skills'
 import { Experience } from './features/experience/Experience'
+import { Contact } from './features/contact/Contact'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
+      <Footer />
     </div>
   )
 }

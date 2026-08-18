@@ -7,9 +7,9 @@ type NavLink = {
   href: string
 }
 
-// Proyectos y Contacto todavía no tienen sección (llegan en próxima etapa).
-// No rompen nada: hasta que existan con su `id` correspondiente, esos links
-// simplemente no hacen scroll a ningún lado.
+// Contacto todavía no tiene sección (llega en próxima etapa). No rompe nada:
+// hasta que exista con su `id` correspondiente, ese link simplemente no hace
+// scroll a ningún lado.
 const navLinks: NavLink[] = [
   { label: 'Sobre mí', href: '#sobre-mi' },
   { label: 'Qué hago', href: '#que-hago' },
